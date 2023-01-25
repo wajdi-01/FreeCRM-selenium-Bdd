@@ -86,10 +86,20 @@ public class LoginSteps extends Base {
 	}
 	@When("click on Customers link")
 	public void click_on_Customers_link() {
+		PageFactory.initElements(driver, LoginPage.class);
+		loginPage.clickOnCustomersLink();
+	}
+	@Then("user should be taken to the Customers page")
+	public void user_should_be_taken_to_the_Customers_page() {
+		loginPage.customersPageAssert();
+	}
+	
+	@When("click on Contatct link")
+	public void click_on_Contatct_link() {
 		
 	}
-	@Then("user should be taken to the Features page")
-	public void user_should_be_taken_to_the_Features_page() {
+	@Then("user should be taken to the Contatct page")
+	public void user_should_be_taken_to_the_Contatct_page() {
 		
 	}
 }

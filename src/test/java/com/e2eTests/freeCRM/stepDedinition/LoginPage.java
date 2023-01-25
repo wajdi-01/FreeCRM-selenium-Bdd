@@ -20,7 +20,9 @@ public class LoginPage extends Base {
 	final static String SUBMIT_BUTTON_XPATH = "//div[@class='myButton']";
 	final static String PIRCING_LINK_XPATH = "//a[contains(text(),'Pricing')]";
 	final static String GET_FREE_CRM_BUTTON_XPATH = "//a[@class='btn btn-default squared']";
-	final static String COSTOMERS_LINK_XPATH = "//a[contains(text(),'Features')]";
+	final static String COSTOMERS_LINK_XPATH = "//a[contains(text(),'Customers')]";
+	final static String CONTACT_LINK_XPATH = "//a[contains(text(),'Contact')]";
+	final static String CONTACT_PAGE_LOGO = "//h1[contains(text(),'Contact us')]";
 	
 	//*FindBy*//
 	
@@ -42,6 +44,10 @@ public class LoginPage extends Base {
 	public static WebElement getFreeCreButton;
 	@FindBy (how = How.XPATH, using = COSTOMERS_LINK_XPATH)
 	public static WebElement costomersLink;
+	@FindBy(how = How.XPATH, using = CONTACT_LINK_XPATH)
+	public static WebElement contactLink;
+	@FindBy(how = How.XPATH, using = CONTACT_PAGE_LOGO)
+	public static WebElement contactPageLogo;
 	
 	//*Methods*//
 	
@@ -81,6 +87,12 @@ public class LoginPage extends Base {
 	public void customersPageAssert() {
 		String customersPageUrl = driver.getCurrentUrl();
 		Assert.assertEquals(customersPageUrl, "https://classic.freecrm.com/customers.html");
-		
+		}
+	public void clickOnContactLink() {
+		contactLink.click();
+	}
+	public void contactPageAssert() {
+		String contactLPageLogo = contactPageLogo.getText();
+		Assert.assertEquals(contactLPageLogo, "Contact us");
 	}
 }

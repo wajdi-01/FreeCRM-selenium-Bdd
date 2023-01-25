@@ -6,7 +6,7 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "src/specs/features" ,  tags = "@precingLink" , 
+@CucumberOptions(features = "src/specs/features" ,  tags = "@contactLink" , 
 plugin = {"pretty" , "html:target/reports/report.html"})
 
 

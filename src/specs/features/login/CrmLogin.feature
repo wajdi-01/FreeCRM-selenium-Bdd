@@ -38,8 +38,14 @@ Feature: Test login functionality
     When click on Pricing link
     Then user should be taken to the Pricing page
 
-  @featureLink
+  @customerLink
   Scenario: test Customers Link
     Given open the application url
     When click on Customers link
     Then user should be taken to the Customers page
+
+  @contactLink
+  Scenario: test contatct Link
+    Given open the application url
+    When click on Contatct link
+    Then user should be taken to the Contatct page
