@@ -96,10 +96,12 @@ public class LoginSteps extends Base {
 	
 	@When("click on Contatct link")
 	public void click_on_Contatct_link() {
+		PageFactory.initElements(driver, LoginPage.class);
+		loginPage.clickOnContactLink();
 		
 	}
 	@Then("user should be taken to the Contatct page")
 	public void user_should_be_taken_to_the_Contatct_page() {
-		
+		loginPage.contactPageAssert();
 	}
 }

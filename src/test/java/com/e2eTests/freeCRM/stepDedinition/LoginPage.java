@@ -1,6 +1,7 @@
 package com.e2eTests.freeCRM.stepDedinition;
 
 
+
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -86,13 +87,13 @@ public class LoginPage extends Base {
 	}
 	public void customersPageAssert() {
 		String customersPageUrl = driver.getCurrentUrl();
-		Assert.assertEquals(customersPageUrl, "https://classic.freecrm.com/customers.html");
+		Assert.assertEquals(customersPageUrl, "https://classic.freecrm.com/customers.html"); 
 		}
 	public void clickOnContactLink() {
 		contactLink.click();
 	}
 	public void contactPageAssert() {
-		String contactLPageLogo = contactPageLogo.getText();
-		Assert.assertEquals(contactLPageLogo, "Contact us");
+		String contactPageUrl = driver.getCurrentUrl();
+		Assert.assertEquals(contactPageUrl, "https://classic.freecrm.com/contact.html"); 
 	}
 }

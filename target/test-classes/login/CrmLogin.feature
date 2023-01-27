@@ -10,21 +10,6 @@ Feature: Test login functionality
     And click on login button
     Then user should be taken to the account page
 
-  @loginFailCRM
-  Scenario Outline: 
-    Given open the application url
-    Then entre email <"login">
-    And enter password <"password">
-    Then login failed error message should be displayed
-
-    Examples: 
-      | login   | password |
-      | test01  | Azert1   |
-      | wajdi17 | Azert2   |
-      | test2   | Wajdi.   |
-      |         |          |
-      |         |          |
-
   #Login Page Links
   @sigupLink
   Scenario: test SigUp Link
@@ -49,3 +34,18 @@ Feature: Test login functionality
     Given open the application url
     When click on Contatct link
     Then user should be taken to the Contatct page
+
+  @loginFailCRM
+  Scenario Outline: Login with invalid credentials 
+    Given open the application url
+    Then entre email <"login">
+    And enter password <"password">
+    Then login failed error message should be displayed
+
+    Examples: 
+      | login   | password |
+      | test01  | Azert1   |
+      | wajdi17 | Azert2   |
+      | test2   | Wajdi.   |
+      |         |          |
+      |         |          |
