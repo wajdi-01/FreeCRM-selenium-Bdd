@@ -1,5 +1,7 @@
 package com.e2eTests.freeCRM.stepDedinition;
 
+
+
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
@@ -21,7 +23,10 @@ public class Hooks extends Base {
 	public void runsAfterAnyScenaruio(Scenario scenario) {
 		final byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
 		scenario.attach(screenshot, "image/png", "image");
+		
+		
 		driver.quit();
+		
 	}
 
 }

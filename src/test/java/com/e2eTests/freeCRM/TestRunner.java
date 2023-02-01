@@ -11,9 +11,10 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
 		 features = "src/test/resources",
 	        
-	        tags ="@login_functionality",
-	        plugin = {"pretty", "html:target/cucumber-html-report", "json:target/cucumber.json",
-	        		"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
+	       	tags = "@call1",
+	        plugin = {"pretty", "html:target/cucumber-report.html", "json:target/cucumber.json"},
+	        		//"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
+		 stepNotifications = true
 	)
 public class TestRunner {
 	
