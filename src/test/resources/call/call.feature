@@ -13,11 +13,8 @@ Feature: Verify Contacts functionality
   Scenario: Title of your scenario
     When click on New Call button
     And click on Lookup button
-    And enter the deal Id "10001" in the search field 
-    And click on Search 
-    And click on the deal01
-    And click on save button
-    Then user sould be taken to the deal details
+    And enter the deal Id "10001" in the search field and click on Search button
+   	Then user sould be taken to the deal details
     
     
       | 

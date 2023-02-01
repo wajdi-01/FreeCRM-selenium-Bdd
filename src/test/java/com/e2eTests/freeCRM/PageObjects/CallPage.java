@@ -1,20 +1,22 @@
 package com.e2eTests.freeCRM.PageObjects;
 
-import java.util.Set;
+
 
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
+
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
 import com.cucumber.freeCRM.Base;
 
 public class CallPage extends Base {
+	
 
 	final static String CALL_BUTTON_XPATH = "//tbody/tr[3]/td[1]/div[1]/div[1]/ul[1]/li[8]/a[1]";
 	final static String LOOKUP_BUTTON_XPATH = "//body[1]/table[2]/tbody[1]/tr[1]/td[2]/table[1]/tbody[1]/tr[1]/td[1]/table[1]/tbody[1]/tr[1]/td[1]/fieldset[1]/form[1]/table[1]/tbody[1]/tr[14]/td[2]/table[1]/tbody[1]/tr[1]/td[1]/input[4]";
-	final static String SEARCH_FIELD_XPATH = "//input[@id='search']";
-	final static String SEARCH_BUTTON_XPATH = "//tbody/tr[2]/td[1]/form[1]/input[4]";
+	final static String SEARCH_FIELD_XPATH = "//*[@name='search']";
+	final static String SEARCH_BUTTON_XPATH = "//input[@type='submit']";
 	final static String DEAL_SEARCH_RESULT = "//a[contains(text(),'10001: deal01')]";
 	final static String SAVE_BUTTON_XPATH = "//input[@type='submit']";
 	final static String CALL_INFORMATION_ASSERT = "//body[1]/table[2]/tbody[1]/tr[1]/td[2]/table[1]/tbody[1]/tr[1]/td[1]/table[1]/tbody[1]/tr[3]/td[1]/div[1]/table[1]/tbody[1]/tr[1]/td[1]/table[1]/tbody[1]/tr[1]/td[1]";
@@ -46,18 +48,16 @@ public class CallPage extends Base {
 	}
 
 	public void enterId(String dealId) {
-		String winHandleBefore = driver.getWindowHandle();
-		for (String winHandle : driver.getWindowHandles()) {
-			driver.switchTo().window(winHandle);
-		}
-		for (String handle1 : driver.getWindowHandles()) {
-			driver.switchTo().window(handle1);
-		}
-		searchField.sendKeys(dealId);
-
+		 String winHandleBefore = driver.getWindowHandle();
+		  for(String winHandle : driver.getWindowHandles())
+		  {
+		  driver.switchTo().window(winHandle);
+		  }
+		  searchField.sendKeys(dealId);
 	}
 
 	public void clickOnSearchButton() {
+		
 		searchButton.click();
 	}
 
@@ -66,10 +66,8 @@ public class CallPage extends Base {
 	}
 
 	public void clickOnSaveButton() {
-		for (String handle1 : driver.getWindowHandles()) {
-			driver.switchTo().window(handle1);
+		driver.switchTo().window(winHandleBefore);
 		saveButton.click();
-		}
 	}
 
 	public void callInformationAssertPage() {
